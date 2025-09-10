@@ -15,7 +15,8 @@ public class BigODrill {
      */
     public static int constantTime(int[] numArr) {
         //TODO: Add the code that returns the last element of the input array with O(1) run time
-        return 0; // Placeholder to make it compile. Replace me with the correct value.
+       return  numArr[numArr.length - 1];
+       // Placeholder to make it compile. Replace me with the correct value.
     }
 
 
@@ -28,6 +29,9 @@ public class BigODrill {
     public static int[] linearTime(int[] numArr) {
         //TODO: Add the code to modify and return the input array with each element squared
         // which performs in O(n)
+        for (i = 0; i < numArr.length; i ++) {
+            numArr[i] = numArr[i] * numArr[i];
+        }
 
         return numArr;
     }
@@ -38,7 +42,10 @@ public class BigODrill {
      * @param numArr - an integer array
      */
     public static int[] puzzle03(int[] numArr) {
-        //TODO: What does the following code do?
+        //TODO: What does the following code do? 
+        // creates a new array (tempArr) that is the same length as numArr. loops through numArr
+        //at indexes that are squared
+        // O(logn)
         int index2 = 0;
         int[] tempArr = new int[numArr.length];
         for(int index = 1; index < numArr.length; index = index * 2) {
@@ -57,7 +64,18 @@ public class BigODrill {
     public static double sparsity(int[][] numArr) {
         //TODO: Write the code that calculates and returns the sparsity of the input
         // rectangular integer array numArr
-        return 0; // Placeholder to make it compile.
+        // O(n)
+        int count = 0;
+        int total = 0;
+        for (i = 0; i< numArr.length; i++) {
+            for(j = 1; j < numArr[i].length; j++) {
+               total++;
+               if (numArr[i][j] == 0) {
+                count++;
+               }
+            }
+        }
+        return (double) total/count; // Placeholder to make it compile.
 
     }
 
